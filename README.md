@@ -12,7 +12,7 @@ Exemplo de resposta:
 
 ```json
 {
-  hello: “Olá mundo! Sou eu, Leonardo de Melo!”
+  "hello": "Olá mundo! Sou eu, Leonardo de Melo!"
 }
 ```
 
@@ -26,8 +26,8 @@ GET /recipe?i=<ingredients>&q=<query>
 
 ```json
 {
-  "query": “Receita”,
-  "ingredients": [“ing1”, “ing3”],
+  "query": "Receita",
+  "ingredients": ["ing1", "ing3"],
   "results": [
     {
       "recipe": "Receita 1",
@@ -56,9 +56,9 @@ Exemplo de body:
 
 ```json
 {
-  "name": “Nome Sobrenome”,
-  "birthdate": yyyy-mm-dd,
-  "date": YYYY-MM-DD
+  "name": "Nome Sobrenome",
+  "birthdate": "yyyy-mm-dd",
+  "date": "YYYY-MM-DD"
 }
 ```
 
@@ -66,7 +66,7 @@ Exemplo de resposta:
 
 ```json
 {
-  "quote": “Olá, Nome Sobrenome! Você tem X anos e em DD/MM/YYYY você terá Y anos.”,
+  "quote": "Olá, Nome Sobrenome! Você tem X anos e em DD/MM/YYYY você terá Y anos.",
   "ageNow": "X",
   "ageThen": "Y"
 }
