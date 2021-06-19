@@ -4,7 +4,7 @@ Este repositório contem todas as informações e o código da API feita baseada
 
 ## Rotas
 
-1. GET /hello
+GET /hello
 
 Responde com uma resposta fixa.
 
@@ -16,13 +16,13 @@ Exemplo de resposta:
 }
 ```
 
-2. GET /recipe?i=<ingredients>&q=<query>
+GET /recipe?i=\<ingredients>&q=\<query>
 
 Utiliza a API do Recipe Puppy para pesquisar por três receitas baseados nos argumentos i (ingredientes) e q (query).
 
 Exemplo de resposta:
 
-GET /recipe?i=<ingredients>&q=<query>
+GET /recipe?i=\<ingredients>&q=\<query>
 
 ```json
 {
@@ -48,7 +48,7 @@ GET /recipe?i=<ingredients>&q=<query>
 }
 ```
 
-3. POST /age
+POST /age
 
 A partir de um body com nome e sobrenome, ano de nascimento e uma data futura, responde com nome e sobrenome, quantos anos a pessoa tem, e quantos ela terá na data futura.
 
