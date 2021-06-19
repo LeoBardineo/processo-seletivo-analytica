@@ -10,9 +10,11 @@ Responde com uma resposta fixa.
 
 Exemplo de resposta:
 
+```json
 {
   hello: “Olá mundo! Sou eu, Leonardo de Melo!”
 }
+```
 
 2. GET /recipe?i=<ingredients>&q=<query>
 
@@ -22,6 +24,7 @@ Exemplo de resposta:
 
 GET /recipe?i=<ingredients>&q=<query>
 
+```json
 {
   query: “Receita”,
   ingredients: [“ing1”, “ing3”],
@@ -43,6 +46,7 @@ GET /recipe?i=<ingredients>&q=<query>
     },
   ]
 }
+```
 
 3. POST /age
 
@@ -50,16 +54,20 @@ A partir de um body com nome e sobrenome, ano de nascimento e uma data futura, r
 
 Exemplo de body:
 
+```json
 {
   name: “Nome Sobrenome”,
   birthdate: yyyy-mm-dd,
   date: YYYY-MM-DD
 }
+```
 
 Exemplo de resposta:
 
+```json
 {
   quote: “Olá, Nome Sobrenome! Você tem X anos e em DD/MM/YYYY você terá Y anos.”,
   ageNow: X,
   ageThen: Y
 }
+```
