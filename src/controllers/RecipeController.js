@@ -5,12 +5,6 @@ exports.index = async (req, res, next) => {
     const ingredients = req.query.i
     const query = req.query.q
 
-    if (query === undefined || query === '' || ingredients === undefined || ingredients === '') {
-      const error = new Error('Faltando argumentos i (ingredients) ou q (query).')
-      error.status = 400
-      return next(error)
-    }
-
     const url = encodeURI(`http://www.recipepuppy.com/api/?i=${ingredients}&q=${query}`)
     const response = await axios.get(url)
 

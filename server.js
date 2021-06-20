@@ -20,6 +20,7 @@ app.use(express.json())
 const helloRoutes = require('./src/routes/hello')
 const recipeRoutes = require('./src/routes/recipe')
 const ageRoutes = require('./src/routes/age')
+const { isCelebrateError } = require('celebrate')
 
 app.use('/hello', helloRoutes)
 app.use('/recipe', recipeRoutes)
@@ -34,9 +35,27 @@ app.use((req, res, next) => {
 
 // Tratamento de erro
 app.use((error, req, res, next) => {
+  if (!isCelebrateError(error)) {
+    return next(error)
+  }
+
+  const err = Object.fromEntries(error.details)
+
+  res.status(400).json({
+    error: {
+      details: err.query !== undefined
+        ? err.query.details[0]
+        : err.body.details[0]
+    }
+  })
+})
+
+app.use((error, req, res, next) => {
   res.status(error.status || 500).json({
     error: {
-      message: error.message || 'Algo deu muito errado'
+      details: {
+        message: error.message || 'Algo deu muito errado'
+      }
     }
   })
 })

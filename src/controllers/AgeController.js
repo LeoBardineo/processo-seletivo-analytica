@@ -4,19 +4,7 @@ exports.index = (req, res, next) => {
 
     if (name.trim().split(' ').length <= 1) {
       const error = new Error('Não foi passado nome e sobrenome.')
-      error.status = 422 // Unprocessable Entity
-      return next(error)
-    }
-
-    if (!birthdate.match(/\d{4}(-\d{2}){2}/)) {
-      const error = new Error('Data de nascimento com formato incorreto. O certo seria yyyy-mm-dd.')
-      error.status = 422
-      return next(error)
-    }
-
-    if (!date.match(/\d{4}(-\d{2}){2}/)) {
-      const error = new Error('Data futúra com formato incorreto. O certo seria yyyy-mm-dd.')
-      error.status = 422
+      error.status = 400 // Unprocessable Entity
       return next(error)
     }
 
